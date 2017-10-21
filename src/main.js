@@ -41,7 +41,7 @@ module.exports = broker => {
 			let proxy = new Proxy(service, {
 				get(target, property, receiver) {
 					
-					if (property === "inspect" || property.toString() === "Symbol(util.inspect.custom)") {
+					if (property === "then" || property === "inspect" || property.toString() === "Symbol(util.inspect.custom)") {
 						return null;
 					}
 					
